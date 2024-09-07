@@ -26,6 +26,7 @@ export const useFormStore = defineStore("form", {
 		sponsoredOccupation: "",
 		image: null,
 		agreeTerms: false,
+		isSubmitting: false,
 		errors: {},
 	}),
 	actions: {
@@ -125,6 +126,7 @@ export const useFormStore = defineStore("form", {
 			const $toast = useToast();
 			if (this.validateForm()) {
 				try {
+					this.isSubmitting = true;
 					const imageUrl = await this.uploadImage();
 					const formData = {
 						fullName: this.fullName,
@@ -150,7 +152,7 @@ export const useFormStore = defineStore("form", {
 					};
 					await addDoc(collection(DB, "applications"), formData);
 					$toast.open({
-						message: "Form submitted successfully!",
+						message: "Application submitted successfully!",
 						type: "success",
 						position: "top-right",
 						pauseOnHover: true,
@@ -163,37 +165,31 @@ export const useFormStore = defineStore("form", {
 						pauseOnHover: true,
 						duration: 5000,
 					});
+				} finally {
+					this.isSubmitting = false;
+					this.fullName = "";
+					this.gender = "";
+					this.religion = "";
+					this.relationshipStatus = "";
+					this.address = "";
+					this.occupation = "";
+					this.officeAddress = "";
+					this.telephone = "";
+					this.date = "";
+					this.propertyRequired = "";
+					this.monthlyBudget = 0;
+					this.annualBudget = 0;
+					this.areaRequirement = "";
+					this.areaPrefarable = "";
+					this.sponsored = "";
+					this.sponsoredTel = "";
+					this.sponsoredAddress = "";
+					this.sponsoredOccupation = "";
+					this.image = null;
+					this.agreeTerms = false;
+					this.errors = {};
 				}
 			}
 		},
-
-		// async submitForm() {
-		// 	if (this.validateForm()) {
-		// 		const imageUrl = await this.uploadImage();
-		// 		const formData = {
-		// 			fullName: this.fullName,
-		// 			gender: this.gender,
-		// 			religion: this.religion,
-		// 			relationshipStatus: this.relationshipStatus,
-		// 			address: this.address,
-		// 			occupation: this.occupation,
-		// 			officeAddress: this.officeAddress,
-		// 			telephone: this.telephone,
-		// 			date: this.date,
-		// 			propertyRequired: this.propertyRequired,
-		// 			monthlyBudget: this.monthlyBudget,
-		// 			annualBudget: this.annualBudget,
-		// 			areaRequirement: this.areaRequirement,
-		// 			areaPrefarable: this.areaPrefarable,
-		// 			sponsored: this.sponsored,
-		// 			sponsoredTel: this.sponsoredTel,
-		// 			sponsoredAddress: this.sponsoredAddress,
-		// 			sponsoredOccupation: this.sponsoredOccupation,
-		// 			imageUrl: imageUrl,
-		// 			agreeTerms: this.agreeTerms,
-		// 		};
-		// 		await addDoc(collection(DB, "formData"), formData);
-		// 	}
-		// },
 	},
 });

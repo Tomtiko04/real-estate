@@ -244,16 +244,13 @@
 				<div class="invalid-feedback">{{ form.errors.agreeTerms }}</div>
 			</div>
 
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" :disabled="form.isSubmitting">{{ form.isSubmitting ? "Submitting" : "Submit" }}</button>
 		</form>
 	</div>
 </template>
 
 <script>
 import { useFormStore } from "../../stores/formStore";
-import { useToast } from "vue-toast-notification";
-
-const $toast = useToast();
 
 export default {
   setup() {
@@ -276,18 +273,8 @@ export default {
     const onSubmit = async () => {
       if (form.validateForm()) {
         await form.submitForm();
-        $toast.open({
-          message: "Application submitted successfully",
-          type: "success",
-          position: "top-right",
-        });
       } else {
         form.validateForm();
-        $toast.open({
-          message: "Application not submitted: Fill all the input fields",
-          type: "error",
-          position: "top-right",
-        });
       }
     };
 
