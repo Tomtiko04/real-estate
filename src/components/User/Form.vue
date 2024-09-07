@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex flex-column justify-content-center" style="width: 90%; margin: auto; padding-block: 2rem;">
+	<div class="d-flex flex-column justify-content-center" style="width: 90%; margin: auto; padding-block: 2em;">
 		<form @submit.prevent="onSubmit" class="row g-3 needs-validation">
 			<div>
 				<label for="validationCustom01" class="form-label">Full Name</label>
