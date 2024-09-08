@@ -178,7 +178,7 @@
 				<div class="invalid-feedback">{{ form.errors.sponsored }}</div>
 			</div>
 			<div>
-				<label for="validationCustom16" class="form-label">Sponsored Telephone</label>
+				<label for="validationCustom16" class="form-label">Sponsored Phone Number</label>
 				<input
 					type="tel"
 					class="form-control"
