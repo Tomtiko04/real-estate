@@ -58,7 +58,7 @@ export const useUserStore = defineStore("user", {
 					type: "success",
 					position: "top-right",
 				});
-				router.push({ name: "home" });
+				router.push({ name: "applications" });
 			} catch (error) {
 				$toast.open({
 					message: error.message,
@@ -95,7 +95,7 @@ export const useUserStore = defineStore("user", {
 					position: "top-right"
 				})
 
-				router.push({ name: "home" });
+				router.push({ name: "applications" });
 			} catch (error) {
 				$toast.open({
 					message: error.message,

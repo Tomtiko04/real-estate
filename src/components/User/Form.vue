@@ -89,7 +89,7 @@
 				<div class="invalid-feedback">{{ form.errors.officeAddress }}</div>
 			</div>
 			<div>
-				<label for="validationCustom08" class="form-label">Telephone</label>
+				<label for="validationCustom08" class="form-label">Phone Number</label>
 				<input
 					type="tel"
 					class="form-control"
@@ -156,7 +156,7 @@
 				<div class="invalid-feedback">{{ form.errors.areaRequirement }}</div>
 			</div>
 			<div>
-				<label for="validationCustom14" class="form-label">Another Area Prefarable</label>
+				<label for="validationCustom14" class="form-label">Another Area preferable</label>
 				<input
 					type="text"
 					class="form-control"
@@ -224,7 +224,7 @@
 				<h3>Notice to Client</h3>
 				<div>
 					<ol>
-						<li>Form fee starting from 20,000.</li>
+						<li>Form fee starting from 20,000</li>
 						<li>The amount paid on this requisition form and consolation is none refundable.</li>
 						<li>The money paid not includes transport cost to the property location.</li>
 					</ol>
