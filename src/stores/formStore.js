@@ -41,58 +41,58 @@ export const useFormStore = defineStore("form", {
 				case "gender":
 					this.errors.gender = this.gender ? "" : "Please choose your gender";
 					break;
-				case "religion":
-					this.errors.religion = this.religion ? "" : "Please choose a religion";
-					break;
-				case "relationshipStatus":
-					this.errors.relationshipStatus = this.relationshipStatus
-						? ""
-						: "Please select your relationship status";
-					break;
+				// case "religion":
+				// 	this.errors.religion = this.religion ? "" : "Please choose a religion";
+				// 	break;
+				// case "relationshipStatus":
+				// 	this.errors.relationshipStatus = this.relationshipStatus
+				// 		? ""
+				// 		: "Please select your relationship status";
+				// 	break;
 				case "address":
 					this.errors.address = this.address ? "" : "Please enter your present residential address";
 					break;
 				case "occupation":
 					this.errors.occupation = this.occupation ? "" : "Please enter your occupation";
 					break;
-				case "officeAddress":
-					this.errors.officeAddress = this.officeAddress ? "" : "Office address must be provided";
-					break;
+				// case "officeAddress":
+				// 	this.errors.officeAddress = this.officeAddress ? "" : "Office address must be provided";
+				// 	break;
 				case "telephone":
-					this.errors.telephone = this.telephone ? "" : "Telephone number must be provided";
+					this.errors.telephone = this.telephone ? "" : "Phone number must be provided";
 					break;
 				case "date":
 					this.errors.date = this.date ? "" : "Agreement date must be provided";
 					break;
-				case "propertyRequired":
-					this.errors.propertyRequired = this.propertyRequired ? "" : "This field must be filled";
-					break;
-				case "monthlyBudget":
-					this.errors.monthlyBudget = this.monthlyBudget > 0 ? "" : "This field must be filled";
-					break;
-				case "annualBudget":
-					this.errors.annualBudget = this.annualBudget > 0 ? "" : "This field must be filled";
-					break;
-				case "areaRequirement":
-					this.errors.areaRequirement = this.areaRequirement ? "" : "This field must be filled";
-					break;
+				// case "propertyRequired":
+				// 	this.errors.propertyRequired = this.propertyRequired ? "" : "This field must be filled";
+				// 	break;
+				// case "monthlyBudget":
+				// 	this.errors.monthlyBudget = this.monthlyBudget > 0 ? "" : "This field must be filled";
+				// 	break;
+				// case "annualBudget":
+				// 	this.errors.annualBudget = this.annualBudget > 0 ? "" : "This field must be filled";
+				// 	break;
+				// case "areaRequirement":
+				// 	this.errors.areaRequirement = this.areaRequirement ? "" : "This field must be filled";
+				// 	break;
 				case "areaPrefarable":
 					this.errors.areaPrefarable = this.areaPrefarable ? "" : "This field must be filled";
 					break;
-				case "sponsored":
-					this.errors.sponsored = this.sponsored ? "" : "This field must be filled";
-					break;
-				case "sponsoredTel":
-					this.errors.sponsoredTel = this.sponsoredTel ? "" : "This field must be filled";
-					break;
-				case "sponsoredAddress":
-					this.errors.sponsoredAddress = this.sponsoredAddress ? "" : "This field must be filled";
-					break;
-				case "sponsoredOccupation":
-					this.errors.sponsoredOccupation = this.sponsoredOccupation
-						? ""
-						: "This field must be filled";
-					break;
+				// case "sponsored":
+				// 	this.errors.sponsored = this.sponsored ? "" : "This field must be filled";
+				// 	break;
+				// case "sponsoredTel":
+				// 	this.errors.sponsoredTel = this.sponsoredTel ? "" : "This field must be filled";
+				// 	break;
+				// case "sponsoredAddress":
+				// 	this.errors.sponsoredAddress = this.sponsoredAddress ? "" : "This field must be filled";
+				// 	break;
+				// case "sponsoredOccupation":
+				// 	this.errors.sponsoredOccupation = this.sponsoredOccupation
+				// 		? ""
+				// 		: "This field must be filled";
+				// 	break;
 				case "image":
 					this.errors.image = this.image ? "" : "Please upload an image";
 					break;

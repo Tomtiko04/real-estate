@@ -156,7 +156,7 @@
 				<div class="invalid-feedback">{{ form.errors.areaRequirement }}</div>
 			</div>
 			<div>
-				<label for="validationCustom14" class="form-label">Another Area preferable</label>
+				<label for="validationCustom14" class="form-label">Area preferable</label>
 				<input
 					type="text"
 					class="form-control"
