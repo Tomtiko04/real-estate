@@ -6,30 +6,29 @@
 					<th scope="col"></th>
 					<th scope="col">Image</th>
 					<th scope="col">Full Name</th>
+					<th scope="col">Gender</th>
 					<th scope="col">Date</th>
-          <th scope="col">Area preferable</th>
+					<th scope="col">Area preferable</th>
 					<th scope="col">Occupation</th>
 					<th scope="col">Phone Number</th>
-          <th scope="col">open</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody v-for="(data, index) in applicationsData" :key="data.id">
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
+					<th scope="row" class="text-center">{{ index + 1 }}</th>
+					<td>
+						<div style="width: 70px; height: 50px">
+							<img :src="data.imageUrl" class="img-fluid img-thumbnail rounded float-start" />
+						</div>
+					</td>
+					<td>{{ data.fullName }}</td>
+					<td>{{ data.gender }}</td>
+					<td>{{ data.date }}</td>
+					<td>{{ data.areaPrefarable }}</td>
+					<td>{{ data.occupation }}</td>
+					<td>{{ data.telephone }}</td>
+					<td>:</td>
 				</tr>
 			</tbody>
 		</table>
@@ -37,18 +36,16 @@
 </template>
 
 <script setup>
-import { watch, watchEffect } from "vue";
+import { useApplicationsStore } from "@/stores/applicationsStore";
+import { onMounted, ref } from "vue";
 
-const data = ref([]);
-watch(data, ()=>{
-  
-})
+const applicationsData = ref([]);
+
+const applications = useApplicationsStore();
+
+onMounted(async () => {
+	await applications.getAllApplication();
+	applicationsData.value = applications.data;
+	console.log("applicationsData:", applicationsData.value);
+});
 </script>
-
-<!-- watch(
-  source,
-  (newValue, oldValue) => {
-    // executed immediately, then again when `source` changes
-  },
-  { immediate: true }
-) -->
